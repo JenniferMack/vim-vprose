@@ -31,5 +31,5 @@ function! OpenVPRfiles()
     execute "normal 2GJ"
 endfunction
 
-command NewScene  call OpenVPRfiles()
+command! NewScene  call OpenVPRfiles()
 
