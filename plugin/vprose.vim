@@ -13,7 +13,7 @@ function! GetVPRcount()
         let g:sq_filename = substitute(g:sq_filename, "XX", "01", "")
     else
         let g:sc_num = g:cwd_files[-1]
-        let g:sc_num = strcharpart(g:sc_num, 3, 2)
+        let g:sc_num = strcharpart(g:sc_num, 0, 2)
         let g:sc_num = printf("%02s", str2nr(g:sc_num)+1)
         let g:sc_filename = substitute(g:sc_filename, "XX", g:sc_num, "")
         let g:sq_filename = substitute(g:sq_filename, "XX", g:sc_num, "")
@@ -25,10 +25,10 @@ function! OpenVPRfiles()
     call GetVPRcount()
     execute "tabnew " . g:sq_filename
     execute append(2, g:bookpath[0])
-    execute "normal 2GJ"
+    execute "normal 2GJG"
     execute "vsplit " . g:sc_filename
     execute append(2, g:bookpath[0])
-    execute "normal 2GJ"
+    execute "normal 2GJG"
 endfunction
 
 command! NewScene  call OpenVPRfiles()
