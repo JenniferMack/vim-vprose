@@ -1,8 +1,8 @@
 function! BuildVPRfilename()
     let g:bookpath = split(getcwd(), "/")[-3:]
     unlet g:bookpath[1]
-    let g:sc_filename = "sc_XX-" . g:bookpath[1] . "-" . g:bookpath[0] . ".vpr"
-    let g:sq_filename = "sq_XX-" . g:bookpath[1] . "-" . g:bookpath[0] . ".vpr"
+    let g:sc_filename = "XX_sc-" . g:bookpath[1] . "-" . g:bookpath[0] . ".vpr"
+    let g:sq_filename = "XX_sq-" . g:bookpath[1] . "-" . g:bookpath[0] . ".vpr"
 endfunction
 
 function! GetVPRcount()
