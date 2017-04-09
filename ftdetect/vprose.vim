@@ -1,4 +1,5 @@
 autocmd BufRead,BufNewFile *.vpr,*.vent setfiletype vprose
+autocmd BufRead,BufNewFile *.vpr,*.vent set syntax=markdown
 autocmd BufNewFile *.vpr,*.vent call Pandoc_header()
 
 
