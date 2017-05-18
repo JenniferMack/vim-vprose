@@ -31,5 +31,33 @@ function! OpenVPRfiles()
     execute "normal 2GJG"
 endfunction
 
-command! NewScene  call OpenVPRfiles()
+let s:vprose_is_active = 0
+
+function! StartVProse()
+    if s:vprose_is_active
+        let s:vprose_is_active = 0
+        let &textwidth = b:prev_textwidth
+        setlocal colorcolumn=0
+        setlocal nolinebreak
+        iunmap <buffer> .
+        iunmap <buffer> ,
+        iunmap <buffer> ;
+        iunmap <buffer> :
+    else
+        let s:vprose_is_active = 1
+        let b:prev_textwidth = &textwidth
+        setlocal textwidth=55
+        setlocal colorcolumn=-3
+        setlocal linebreak
+
+        inoremap <buffer> . .<CR>
+        inoremap <buffer> , ,<CR>
+        inoremap <buffer> ; ;<CR>
+        inoremap <buffer> : :<CR>
+    end
+endfunc
+
+command! StartVProse call StartVProse()
+command! NewScene    call OpenVPRfiles()
+
 
