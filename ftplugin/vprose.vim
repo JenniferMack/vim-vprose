@@ -17,6 +17,8 @@ setlocal linebreak
 inoremap <buffer> . .<CR>
 inoremap <buffer> , ,<CR>
 inoremap <buffer> ; ;<CR>
+inoremap <buffer> ( (<CR>
+inoremap <buffer> ) )<CR>
 
 "iab <buffer> for for<CR><C-R>=Eatchar('\s')<CR>
 "iab <buffer> and and<CR><C-R>=Eatchar('\s')<CR>

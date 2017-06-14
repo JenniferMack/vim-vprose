@@ -43,6 +43,8 @@ function! StartVProse()
         iunmap <buffer> ,
         iunmap <buffer> ;
         iunmap <buffer> :
+        iunmap <buffer> (
+        iunmap <buffer> )
     else
         let s:vprose_is_active = 1
         let b:prev_textwidth = &textwidth
@@ -54,6 +56,8 @@ function! StartVProse()
         inoremap <buffer> , ,<CR>
         inoremap <buffer> ; ;<CR>
         inoremap <buffer> : :<CR>
+        inoremap <buffer> ( <CR>(
+        inoremap <buffer> ) <CR>)
     end
 endfunc
 
