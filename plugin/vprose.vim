@@ -57,11 +57,11 @@ function! StartVProse()
         inoremap <buffer> ; ;<CR>
         inoremap <buffer> : :<CR>
         inoremap <buffer> ( <CR>(
-        inoremap <buffer> ) <CR>)
+        inoremap <buffer> ) )<CR>
     end
 endfunc
 
-command! StartVProse call StartVProse()
+command! VProseToggle call StartVProse()
 command! NewScene    call OpenVPRfiles()
 
 
